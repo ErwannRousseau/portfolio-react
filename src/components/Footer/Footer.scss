@@ -1,0 +1,48 @@
+.Footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-container {
+    max-width: 600px;
+    width: 100%;
+  }
+
+  &-top {
+    display: flex;
+    justify-content: center;
+    padding: 0 1.5rem;
+    padding-bottom: 20px;
+    color: #a2b5cd;
+    border-bottom: 2px solid #3a4f6a;
+  }
+
+  &-link {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #a2b5cd;
+    height: 50px;
+  }
+
+  &-legal {
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    & > a {
+      margin: 0 0.5rem;
+    }
+
+    & > span {
+      margin-right: 0.6rem;
+    }
+  }
+}

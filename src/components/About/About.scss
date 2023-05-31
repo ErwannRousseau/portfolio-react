@@ -1,0 +1,56 @@
+.About {
+  color: #ccd6f6;
+  width: 100%;
+  height: 100dvh;
+  padding: 0 1.5rem;
+
+  &-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  &-header {
+    padding-bottom: 2rem;
+
+    @media (min-width: 768px) {
+      text-align: center;
+    }
+
+    &-title {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+      font-weight: 700;
+      display: inline;
+      border-bottom: 4px solid #e83e8c;
+    }
+  }
+
+  &-content {
+    max-width: 1000px;
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &-details {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+      font-weight: 700;
+
+      @media (min-width: 768px) {
+        text-align: right;
+      }
+    }
+
+    &-pres {
+      padding-top: 0.25rem;
+    }
+  }
+}
