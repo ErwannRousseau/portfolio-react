@@ -1,4 +1,4 @@
-$pink: #e83e8c;
+$pink: #ec407a;
 $blue: #ccd6f6;
 
 .Contact {
@@ -6,36 +6,51 @@ $blue: #ccd6f6;
   height: 100dvh;
   display: flex;
   color: $blue;
-  justify-content: space-around;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
   padding: 0 1.5rem;
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &-header {
+    align-self: baseline;
+    padding-bottom: 2rem;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+
+    .Contact-title {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+      font-weight: 700;
+      display: inline;
+      border-bottom: 4px solid $pink;
+    }
+
+    .Contact-description {
+      padding: 1rem 0;
+    }
+
+    .Contact-email {
+      color: $pink;
+      text-decoration: underline solid $pink;
+    }
+  }
 
   &-form {
     display: flex;
     flex-direction: column;
-    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
 
-    .Contact-header {
-      align-self: baseline;
-      padding-bottom: 2rem;
-
-      .Contact-title {
-        font-size: 2.25rem;
-        line-height: 2.5rem;
-        font-weight: 700;
-        display: inline;
-        border-bottom: 4px solid $pink;
-      }
-
-      .Contact-description {
-        padding: 1rem 0;
-      }
-
-      .Contact-email {
-        color: $pink;
-        text-decoration: underline solid $pink;
-      }
+    @media (min-width: 768px) {
+      max-width: 90%;
     }
 
     .Contact-input-name,
