@@ -3,21 +3,34 @@ $grey: #8892b0;
 
 .Home {
   width: 100%;
-  height: 100dvh;
   padding: 0 1.5rem;
 
   &-container {
     max-width: 1000px;
     margin: 0 auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
+    align-items: center;
     justify-content: center;
-    height: 100%;
+    height: 100dvh;
+    padding-top: 3rem;
 
-    @media (max-width: 576px) {
+    @media (max-height: 700px) {
       height: 100%;
-      margin-left: auto;
-      margin-right: auto;
+      padding-top: 4.7rem;
+    }
+
+    @media (min-width: 1024px) {
+      flex-direction: row;
+    }
+
+    .left {
+      @media (min-width: 1024px) {
+        flex: 1.8;
+      }
+      @media (min-width: 1280px) {
+        flex: 2;
+      }
     }
   }
 
@@ -33,23 +46,22 @@ $grey: #8892b0;
     font-size: 2.25rem;
     line-height: 2.5rem;
 
-    @media screen and (min-width: 640px) {
-      font-size: 3rem;
+    @media (min-width: 640px) {
+      font-size: 2rem;
     }
 
-    @media screen and (min-width: 768px) {
-      font-size: 4rem;
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
       margin: 0.5rem 0;
     }
 
-    @media screen and (min-width: 1024px) {
-      font-size: 5rem;
+    @media (min-width: 1024px) {
+      font-size: 3rem;
       margin: 1rem 0;
     }
 
     @media (min-width: 1280px) {
-      font-size: 6rem;
-      margin: 1.7rem 0;
+      font-size: 4rem;
     }
   }
 
@@ -64,16 +76,16 @@ $grey: #8892b0;
     }
 
     @media (min-width: 1024px) {
-      font-size: 3rem;
+      font-size: 2.5rem;
     }
 
     @media (min-width: 1280px) {
-      font-size: 4rem;
+      font-size: 3rem;
       line-height: 3.2rem;
     }
 
     @media (min-width: 1536px) {
-      font-size: 5rem;
+      font-size: 4rem;
       line-height: 4rem;
     }
   }
@@ -88,7 +100,7 @@ $grey: #8892b0;
 
   &-btn {
     color: #fff;
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Open Sans', sans-serif;
     border: solid 2px #fff;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -118,6 +130,64 @@ $grey: #8892b0;
 
     svg {
       margin-left: 0.75rem;
+    }
+  }
+
+  .hero-img {
+    -webkit-animation: morph 8s ease-in-out infinite;
+    animation: morph 8s ease-in-out infinite;
+    background-image: url(src/assets/photo_cv.png);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 3px solid #2d2e32;
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    position: relative;
+    height: 18rem;
+    width: 18rem;
+
+    @media (min-width: 1280px) {
+      margin-right: -2rem;
+      flex: 1.5;
+    }
+
+    @media (min-width: 1024px) {
+      margin-left: 1rem;
+    }
+  }
+
+  @media (min-width: 500px) {
+    .hero-img {
+      height: 25rem;
+      width: 25rem;
+    }
+  }
+
+  @-webkit-keyframes morph {
+    0% {
+      border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+
+    50% {
+      border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    }
+
+    to {
+      border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+  }
+
+  @keyframes morph {
+    0% {
+      border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+
+    50% {
+      border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    }
+
+    to {
+      border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
     }
   }
 }

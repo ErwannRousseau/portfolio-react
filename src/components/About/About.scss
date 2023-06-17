@@ -4,6 +4,11 @@
   height: 100dvh;
   padding: 0 1.5rem;
 
+  @media (max-height: 700px) {
+    height: 100%;
+    margin-top: 3rem;
+  }
+
   &-container {
     max-width: 1000px;
     margin: 0 auto;
