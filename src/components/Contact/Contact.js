@@ -15,6 +15,7 @@ function Contact() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const resetForm = () => {
     form.current.reset();
@@ -50,7 +51,7 @@ function Contact() {
     } else {
       emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
         () => {
-          setSuccess('Votre essage a bien été envoyé, je reviendrais vers vous le plus vite possible');
+          setSuccess('Votre message a bien été envoyé, je reviendrais vers vous le plus vite possible');
           resetForm();
           setLoading(false);
         },
@@ -60,6 +61,7 @@ function Contact() {
         }
       );
     }
+    setIsSubmitted(true);
     setTimeout(() => {
       setSuccess(null);
       setError(null);
@@ -101,7 +103,7 @@ function Contact() {
               placeholder="Quel est votre message ?"
               onChange={(e) => setMessage(e.target.value)}
             />
-            <button type="submit" className="Contact-submit">
+            <button type="submit" className="Contact-submit" disabled={isSubmitted}>
               {loading ? 'Envoie en cours...' : 'Envoyer'}
             </button>
           </form>
@@ -110,13 +112,13 @@ function Contact() {
       <ToastNotif
         success={success}
         toggleToast={() => {
-          setSuccess();
+          setSuccess(null);
         }}
       />
       <ToastNotif
         error={error}
         toggleToast={() => {
-          setError();
+          setError(null);
         }}
       />
     </>

@@ -1,10 +1,11 @@
 import './ToastNotif.scss';
+import PropTypes from 'prop-types';
 
 function ToastNotif({ success, error, toggleToast }) {
   return (
     <div className={`toast ${success ? 'active success' : ''} ${error ? 'active error' : ''} `}>
       <div className="toast-content">
-        <i className={`fas fa-solid fa-check check ${success ? 'success' : ''} ${error ? 'error' : ''}`} />
+        <i className={`fas fa-solid check ${success ? 'success fa-check' : ''} ${error ? 'error fa-xmark' : ''}`} />
         <span className="text">
           {success} {error}
         </span>
@@ -17,4 +18,14 @@ function ToastNotif({ success, error, toggleToast }) {
   );
 }
 
+ToastNotif.propTypes = {
+  success: PropTypes.string,
+  error: PropTypes.string,
+  toggleToast: PropTypes.func.isRequired,
+};
+
+ToastNotif.defaultProps = {
+  success: '', // set a default value for the success prop
+  error: '', // set a default value for the error prop
+};
 export default ToastNotif;

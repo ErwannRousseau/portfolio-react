@@ -53,6 +53,7 @@
   }
 
   &-tech-card {
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -63,6 +64,15 @@
 
     &:hover {
       transform: scale(1.1);
+    }
+
+    .gradient-bg {
+      inset: -1px;
+      position: absolute;
+      border-radius: 10px;
+      transition-duration: 300ms;
+      pointer-events: none;
+      opacity: 0;
     }
   }
   &-tech-img {

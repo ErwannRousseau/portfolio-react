@@ -75,11 +75,15 @@ $blue: #ccd6f6;
       margin: 2rem auto;
       align-items: center;
       transition: all 0.3s;
-      cursor: pointer;
 
       &:hover {
         background-color: $pink;
-        border-color: $pink;
+        cursor: pointer;
+      }
+
+      &:disabled:hover {
+        background-color: inherit;
+        cursor: not-allowed;
       }
     }
   }
