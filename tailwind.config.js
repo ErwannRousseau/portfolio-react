@@ -4,5 +4,15 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const rotateY180 = {
+        '.rotateY-180': {
+          transform: 'rotateY(180deg)',
+        },
+      };
+
+      addUtilities(rotateY180);
+    },
+  ],
 };

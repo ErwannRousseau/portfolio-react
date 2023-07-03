@@ -15,23 +15,24 @@ import SCSS from 'src/assets/scss.png';
 import Tailwind from 'src/assets/tailwind.png';
 
 const data = {
-
   projects: [
     {
       id: 1,
       image: TaskManager,
       video: 'http://localhost/Spe-React/portolio-react/public/taskmanager-video.mp4',
       title: 'Task Manager',
-      description: 'Task-Manager est une application web permettant de gérer les tâches en utilisant JavaScript pour la partie frontend et Laravel pour gérer la partie backend.',
+      description:
+        'Task-Manager est une application web permettant de gérer les tâches en utilisant JavaScript pour la partie frontend et Laravel pour gérer la partie backend.',
       stack: 'JavaScript / Laravel',
       link: 'https://github.com/ErwannRousseau/Task-Manager',
     },
     {
       id: 2,
       image: Chatroom,
-      video: 'http://localhost/Spe-React/portolio-react/public/chatroom-video.mp4',
+      video: 'http://localhost/GitHub/portfolio-react/public/chatroom-video.mp4',
       title: 'Chatroom',
-      description: "Chatroom est une application web de messagerie instantannée, alimentée par Express pour l'API, React pour le front-end et WebSocket pour une expérience de messagerie instantanée.",
+      description:
+        "Chatroom est une application web de messagerie instantannée, alimentée par Express pour l'API, React pour le front-end et WebSocket pour une expérience de messagerie instantanée.",
       stack: 'React.js / TailWind / Express',
       link: 'https://github.com/ErwannRousseau/Chatroom',
     },
@@ -40,7 +41,8 @@ const data = {
       image: oRecipes,
       video: 'http://localhost/Spe-React/portolio-react/public/orecipes-video.mp4',
       title: 'oRecipes',
-      description: "oRecipes est un projet de site web dédié aux recettes culinaires. Alimentée par Express pour l'API, React et SCSS pour le front-end pour offrir une expérience utilisateur conviviale et une gestion de connexion avec token JWT.",
+      description:
+        "oRecipes est un projet de site web dédié aux recettes culinaires. Alimentée par Express pour l'API, React et SCSS pour le front-end pour offrir une expérience utilisateur conviviale et une gestion de connexion avec token JWT.",
       stack: 'React.js / SCSS / Express',
       link: 'https://github.com/ErwannRousseau/oRecipes',
     },
@@ -104,7 +106,6 @@ const data = {
       name: 'Git',
     },
   ],
-
 };
 
 export default data;

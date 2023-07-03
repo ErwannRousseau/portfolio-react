@@ -12,11 +12,11 @@ import Privacy from '../LegalComponents/Privacy';
 
 function App() {
   return (
-    <div>
+    <div className="overflow-hidden">
       <Routes>
         <Route
           path="/"
-          element={(
+          element={
             <>
               <Navbar />
               <Home />
@@ -25,16 +25,10 @@ function App() {
               <Work />
               <Contact />
             </>
-          )}
+          }
         />
-        <Route
-          path="/legal/conditions"
-          element={(<Terms />)}
-        />
-        <Route
-          path="/legal/confidentialite"
-          element={(<Privacy />)}
-        />
+        <Route path="/legal/conditions" element={<Terms />} />
+        <Route path="/legal/confidentialite" element={<Privacy />} />
       </Routes>
       <Footer />
     </div>

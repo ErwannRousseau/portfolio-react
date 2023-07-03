@@ -105,7 +105,7 @@ $green: rgba(18, 164, 18, 0.886);
   }
 
   .progress.active:before {
-    animation: progress 7s linear forwards;
+    animation: progress 5s linear forwards;
   }
 
   @keyframes progress {

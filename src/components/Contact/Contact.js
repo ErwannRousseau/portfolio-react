@@ -1,8 +1,11 @@
 import './Contact.scss';
 import { useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import isValidDomain from 'is-valid-domain';
 import ToastNotif from './ToastNotif/ToastNotif';
+import { fadeIn, staggerContainer, textVariant } from '../../utils/motion';
+import TypingText from '../../utils/CustomText';
 
 function Contact() {
   const serviceId = process.env.SERVICE_ID;
@@ -39,7 +42,7 @@ function Contact() {
       setError("L'email n'est pas valide");
       setTimeout(() => {
         setError(null);
-      }, 7000);
+      }, 5000);
       setLoading(false);
       return;
     }
@@ -65,49 +68,68 @@ function Contact() {
     setTimeout(() => {
       setSuccess(null);
       setError(null);
-    }, 7000);
+    }, 5000);
   };
 
   return (
     <>
       <section name="contact" className="Contact">
-        <div className="Contact-container">
-          <div className="Contact-header">
-            <h2 className="Contact-title">Contact</h2>
-            <p className="Contact-description">
-              // Remplissez le formulaire ci-dessous ou envoyez-moi un email -&nbsp;
-              <a className="Contact-email" href="mailto:erwann.rousseau@icloud.com">
-                erwann.rousseau@icloud.com
-              </a>
-            </p>
-          </div>
+        <motion.div
+          className="Contact-container"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+        >
+          <motion.h2 variants={fadeIn('down', 'tween', 0, 1)} className="self-baseline Contact-title">
+            Contact
+          </motion.h2>
+          {/* <TypingText subtitle="// Découvrez quelques-uns de mes projets récents" textStyles="py-4 self-baseline" /> */}
+
+          {/* <p className="Contact-description">
+            // Remplissez le formulaire ci-dessous ou envoyez-moi un email -&nbsp;
+            <a className="Contact-email" href="mailto:erwann.rousseau@icloud.com">
+              erwann.rousseau@icloud.com
+            </a>
+          </p> */}
+
+          <TypingText
+            subtitle="// Remplissez le formulaire ci-dessous ou envoyez-moi un email - "
+            textStyles="py-4"
+            link="erwann.rousseau@icloud.com"
+            linkStyle="link-style"
+          />
+
           <form method="POST" ref={form} onSubmit={sendEmail} className="Contact-form">
-            <input
+            <motion.input
+              variants={textVariant(1.2)}
               className="Contact-input-name"
               type="text"
               placeholder="Quel est votre prénom ?"
               name="user_name"
               onChange={(e) => setName(e.target.value)}
             />
-            <input
+            <motion.input
+              variants={textVariant(1.3)}
               className="Contact-input-email"
               type="email"
               placeholder="Quel est votre email ?"
               name="user_email"
               onChange={(e) => setEmail(e.target.value)}
             />
-            <textarea
+            <motion.textarea
+              variants={textVariant(1.4)}
               className="Contact-input-message"
               name="message"
               rows="10"
               placeholder="Quel est votre message ?"
               onChange={(e) => setMessage(e.target.value)}
             />
-            <button type="submit" className="Contact-submit" disabled={isSubmitted}>
+            <motion.button variants={textVariant(1.2)} type="submit" className="Contact-submit" disabled={isSubmitted}>
               {loading ? 'Envoie en cours...' : 'Envoyer'}
-            </button>
+            </motion.button>
           </form>
-        </div>
+        </motion.div>
       </section>
       <ToastNotif
         success={success}

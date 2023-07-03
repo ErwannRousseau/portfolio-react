@@ -1,23 +1,34 @@
 import './Home.scss';
 import { HiArrowNarrowRight } from 'react-icons/hi';
 import { Link } from 'react-scroll';
+import { motion } from 'framer-motion';
+
+import { slideIn, staggerContainer, textVariant } from '../../utils/motion';
 
 function Home() {
   return (
     <section name="home" className="Home">
-      <div className="Home-container">
+      <motion.div
+        className="Home-container"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25 }}
+      >
         <div className="left">
-          <p className="Home-hello">Bonjour, je m'appelle</p>
-          <h2 className="Home-name">Erwann Rousseau</h2>
-          <h1 className="Home-title">Je suis développeur web Full-Stack.</h1>
-          <p className="Home-pres">
+          <motion.div variants={textVariant(1.1)}>
+            <p className="Home-hello">Bonjour, je m'appelle</p>
+            <h2 className="Home-name">Erwann Rousseau</h2>
+            <h1 className="Home-title">Je suis développeur web Full-Stack.</h1>
+          </motion.div>
+          <motion.p variants={textVariant(1.2)} className="Home-pres">
             {/* eslint-disable-next-line max-len */}
             Je suis un développeur web full-stack junior passionné par la création d'expériences interactives en ligne.
             J'ai une préférence marquée pour React, que j'utilise avec enthousiasme pour développer des applications web
             dynamiques.
-          </p>
-          <div>
-            <Link to="work" smooth duration={500} offset={-80}>
+          </motion.p>
+          <motion.div variants={textVariant(1.3)}>
+            <Link to="work" smooth duration={500}>
               <button type="button" className="Home-btn">
                 Voir mes travaux
                 <span className="Home-arrow">
@@ -25,10 +36,10 @@ function Home() {
                 </span>
               </button>
             </Link>
-          </div>
+          </motion.div>
         </div>
-        <div className="hero-img" />
-      </div>
+        <motion.div variants={slideIn('right', 'spring', 0.2, 1)} className="hero-img" />
+      </motion.div>
     </section>
   );
 }

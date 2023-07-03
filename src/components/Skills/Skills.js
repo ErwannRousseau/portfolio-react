@@ -1,74 +1,43 @@
-import './Skills.scss';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import data from 'src/data/data';
+import { motion } from 'framer-motion';
+import Tilt from 'react-parallax-tilt';
+import TypingText from '../../utils/CustomText';
+import { fadeIn, slideIn, staggerContainer, zoomIn } from '../../utils/motion';
+import './Skills.scss';
 
 function Skills() {
   const { skills } = data;
 
-  const [isFocused, setIsFocused] = useState(false);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [opacity, setOpacity] = useState(0);
-
-  const handleMouseMove = (e) => {
-    if (isFocused) {
-      return;
-    }
-
-    const rect = e.currentTarget.getBoundingClientRect();
-    setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-  };
-
-  const handleFocus = () => {
-    setIsFocused(true);
-    setOpacity(1);
-  };
-
-  const handleBlur = () => {
-    setIsFocused(false);
-    setOpacity(0);
-  };
-
-  const handleMouseEnter = () => {
-    setOpacity(1);
-  };
-
-  const handleMouseLeave = () => {
-    console.log('leave');
-    setOpacity(0);
-  };
   return (
     <section name="skills" className="Skills">
       {/* Container */}
-      <div className="Skills-container">
-        <div className="Skills-header">
-          <h2 className="Skills-header-title">Skills</h2>
-          <p className="Skills-header-subtitle">// Voici les technologies avec lesquelles je travaille</p>
-        </div>
+      <motion.div
+        className="Skills-container"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25 }}
+      >
+        <motion.h2 className="Skills-title" variants={fadeIn('down', 'tween', 0, 1)}>
+          Skills
+        </motion.h2>
+        <TypingText subtitle="// Voici les technologies avec lesquelles je travaille" textStyles="py-4 self-baseline" />
+
         <div className="Skills-tech-container">
           {/* Skills */}
-          {skills.map((skill) => (
-            <div
-              className="Skills-tech-card"
-              key={skill.id}
-              onMouseMove={handleMouseMove}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              onFocus={handleFocus}
-              onBlur={handleBlur}
-            >
-              <div
-                className="gradient-bg"
-                style={{
-                  opacity,
-                  background: `radial-gradient(400px circle at ${position.x}px ${position.y}px, rgba(255,182,255,.1), transparent 40%)`,
-                }}
-              />
-              <img className="Skills-tech-img" src={skill.image} alt={`${skill.name} icon`} />
-              <p className="Skills-tech-name">{skill.name}</p>
-            </div>
+          {skills.map((skill, index) => (
+            <Tilt key={skill.id}>
+              <motion.div className="Skills-tech-card" variants={zoomIn(1, 1)}>
+                <div className="w-full">
+                  <img className="Skills-tech-img" src={skill.image} alt={`${skill.name} icon`} />
+                  <p className="Skills-tech-name">{skill.name}</p>
+                </div>
+              </motion.div>
+            </Tilt>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
