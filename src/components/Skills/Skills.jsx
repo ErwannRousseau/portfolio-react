@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import data from 'src/data/data';
 import { motion } from 'framer-motion';
 import Tilt from 'react-parallax-tilt';
-import TypingText from '../../utils/CustomText';
-import { fadeIn, slideIn, staggerContainer, zoomIn } from '../../utils/motion';
+import TypingText from 'src/utils/CustomText';
+import { fadeIn, staggerContainer, zoomIn } from 'src/utils/motion';
 import './Skills.scss';
 
 function Skills() {
@@ -19,14 +19,14 @@ function Skills() {
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
       >
-        <motion.h2 className="Skills-title" variants={fadeIn('down', 'tween', 0, 1)}>
+        <motion.h2 className="Skills-title" variants={fadeIn('up', 'tween', 0, 1)}>
           Skills
         </motion.h2>
         <TypingText subtitle="// Voici les technologies avec lesquelles je travaille" textStyles="py-4 self-baseline" />
 
         <div className="Skills-tech-container">
           {/* Skills */}
-          {skills.map((skill, index) => (
+          {skills.map((skill) => (
             <Tilt key={skill.id}>
               <motion.div className="Skills-tech-card" variants={zoomIn(1, 1)}>
                 <div className="w-full">

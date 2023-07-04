@@ -8,9 +8,9 @@ import { fadeIn, staggerContainer, textVariant } from '../../utils/motion';
 import TypingText from '../../utils/CustomText';
 
 function Contact() {
-  const serviceId = process.env.SERVICE_ID;
-  const templateId = process.env.TEMPLATE_ID;
-  const publicKey = process.env.YOUR_PUBLIC_KEY;
+  const serviceId = import.meta.env.VITE_SERVICE_ID;
+  const templateId = import.meta.env.VITE_TEMPLATE_ID;
+  const publicKey = import.meta.env.VITE_YOUR_PUBLIC_KEY;
   const form = useRef();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -81,18 +81,9 @@ function Contact() {
           whileInView="show"
           viewport={{ once: false, amount: 0.25 }}
         >
-          <motion.h2 variants={fadeIn('down', 'tween', 0, 1)} className="self-baseline Contact-title">
+          <motion.h2 variants={fadeIn('up', 'tween', 0, 1)} className="self-baseline Contact-title">
             Contact
           </motion.h2>
-          {/* <TypingText subtitle="// Découvrez quelques-uns de mes projets récents" textStyles="py-4 self-baseline" /> */}
-
-          {/* <p className="Contact-description">
-            // Remplissez le formulaire ci-dessous ou envoyez-moi un email -&nbsp;
-            <a className="Contact-email" href="mailto:erwann.rousseau@icloud.com">
-              erwann.rousseau@icloud.com
-            </a>
-          </p> */}
-
           <TypingText
             subtitle="// Remplissez le formulaire ci-dessous ou envoyez-moi un email - "
             textStyles="py-4"

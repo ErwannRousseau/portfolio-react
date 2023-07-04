@@ -39,7 +39,7 @@ function Privacy() {
           politique de confidentialité a pour but de vous informer sur la manière dont je collecte, utilise, partage et
           protège les informations que vous me fournissez via le formulaire de contact.
         </p>
-        <h3 className="text-2xl font-bold mt-4 mb-2">Collecte d'informations</h3>
+        <h3 className="text-2xl font-bold mt-4 mb-2">Collecte d&apos;informations</h3>
         <p>
           Lorsque vous utilisez le formulaire de contact sur mon portfolio, je peux collecter certaines informations
           personnelles, telles que votre nom, votre prénom et votre adresse e-mail. Ces informations me sont fournies
@@ -49,9 +49,9 @@ function Privacy() {
         <h3 className="text-2xl font-bold mt-4 mb-2">Utilisation des informations</h3>
         <p>
           Les informations personnelles que vous me fournissez via le formulaire de contact sont utilisées uniquement
-          dans le cadre de la communication et de l'interaction avec vous. Je ne les utilise pas à d'autres fins, telles
-          que l'envoi de newsletters ou la promotion de produits ou services, sauf si vous me donnez votre consentement
-          explicite à cet égard.
+          dans le cadre de la communication et de l&apos;interaction avec vous. Je ne les utilise pas à d&apos;autres
+          fins, telles que l&apos;envoi de newsletters ou la promotion de produits ou services, sauf si vous me donnez
+          votre consentement explicite à cet égard.
         </p>
         <h3 className="text-2xl font-bold mt-4 mb-2">Partage des informations</h3>
         <p>Je ne partage pas vos informations personnelles avec des tiers, sauf dans les cas suivants :</p>
@@ -68,15 +68,15 @@ function Privacy() {
         <h3 className="text-2xl font-bold mt-4 mb-2">Sécurité des données</h3>
         <p>
           Je prends des mesures de sécurité appropriées pour protéger vos informations personnelles contre tout accès
-          non autorisé, toute divulgation, toute altération ou toute destruction. Cependant, veuillez noter qu'aucune
-          méthode de transmission de données sur Internet ou de stockage électronique n'est totalement sécurisée. Je ne
-          peux donc garantir la sécurité absolue de vos informations.
+          non autorisé, toute divulgation, toute altération ou toute destruction. Cependant, veuillez noter
+          qu&apos;aucune méthode de transmission de données sur Internet ou de stockage électronique n&apos;est
+          totalement sécurisée. Je ne peux donc garantir la sécurité absolue de vos informations.
         </p>
         <h3 className="text-2xl font-bold mt-4 mb-2">Liens externes</h3>
         <p>
-          Mon portfolio peut contenir des liens vers des sites externes pertinents. Veuillez noter que je n'ai aucun
-          contrôle sur le contenu ou les pratiques de confidentialité de ces sites. Je vous encourage à consulter les
-          politiques de confidentialité de ces sites avant de fournir vos informations personnelles.
+          Mon portfolio peut contenir des liens vers des sites externes pertinents. Veuillez noter que je n&apos;ai
+          aucun contrôle sur le contenu ou les pratiques de confidentialité de ces sites. Je vous encourage à consulter
+          les politiques de confidentialité de ces sites avant de fournir vos informations personnelles.
         </p>
         <h3 className="text-2xl font-bold mt-4 mb-2">Modification de la politique de confidentialité</h3>
         <p>
@@ -87,7 +87,7 @@ function Privacy() {
         <h3 className="text-2xl font-bold mt-4 mb-2">Contact</h3>
         <p>
           Si vous avez des questions concernant la politique de confidentialité ou si vous souhaitez exercer vos droits
-          en matière de protection des données, veuillez me contacter à cette adresse email :{' '}
+          en matière de protection des données, veuillez me contacter à cette adresse email :&nbsp;
           <a href="mailto:erwann.rousseau@icloud.com" className="text-[#e83e8c]">
             erwann.rousseau@icloud.com
           </a>

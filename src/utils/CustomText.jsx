@@ -1,4 +1,6 @@
+/* eslint-disable react/no-array-index-key */
 import { motion } from 'framer-motion';
+import PropTypes from 'prop-types';
 import { textContainer, textVariant2 } from './motion';
 
 export default function TypingText({ subtitle, textStyles, link, linkStyle }) {
@@ -21,3 +23,15 @@ export default function TypingText({ subtitle, textStyles, link, linkStyle }) {
     </motion.p>
   );
 }
+
+TypingText.propTypes = {
+  subtitle: PropTypes.string.isRequired,
+  textStyles: PropTypes.string.isRequired,
+  link: PropTypes.string,
+  linkStyle: PropTypes.string,
+};
+
+TypingText.defaultProps = {
+  link: '',
+  linkStyle: '',
+};

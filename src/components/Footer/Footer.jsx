@@ -46,7 +46,7 @@ function Footer() {
           <div className="Footer-legal">
             <span>Copyright © 2023 Erwann Rousseau</span>
             <NavLink to="/legal/conditions" onClick={handleScrollToTop}>
-              Conditions d'utilisation
+              Conditions d&apos;utilisation
             </NavLink>
             <NavLink to="/legal/confidentialite" onClick={handleScrollToTop}>
               Confidentialité

@@ -1,5 +1,6 @@
 import './Work.scss';
 import { useEffect, useRef, useState } from 'react';
+import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 
 import data from 'src/data/data';
@@ -7,8 +8,8 @@ import GitHub from 'src/assets/github.png';
 
 import iconPlay from 'src/assets/icons/play-video-icon.png';
 import SVGstack from 'src/assets/icons/SVGstack';
-import { fadeIn, staggerContainer } from '../../utils/motion';
-import TypingText from '../../utils/CustomText';
+import { fadeIn, staggerContainer } from 'src/utils/motion';
+import TypingText from 'src/utils/CustomText';
 
 function Work() {
   const works = data.projects;
@@ -36,7 +37,7 @@ function Work() {
         className="max-w-[1000px] flex flex-col justify-center items-center mx-auto my-0"
       >
         <motion.h2
-          variants={fadeIn('down', 'tween', 0, 1)}
+          variants={fadeIn('up', 'tween', 0, 1)}
           className="self-baseline text-4xl leading-10 font-bold inline border-b-4 border-b-[#ec407a] border-solid"
         >
           Projets
@@ -168,3 +169,7 @@ function Video({ url }) {
     </div>
   );
 }
+
+Video.propTypes = {
+  url: PropTypes.string.isRequired,
+};
