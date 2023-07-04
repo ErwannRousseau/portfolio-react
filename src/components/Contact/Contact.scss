@@ -17,30 +17,21 @@ $blue: #ccd6f6;
     justify-content: center;
   }
 
-  &-header {
-    align-self: baseline;
-    padding-bottom: 2rem;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
+  .Contact-title {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+    display: inline;
+    border-bottom: 4px solid $pink;
+  }
 
-    .Contact-title {
-      font-size: 2.25rem;
-      line-height: 2.5rem;
-      font-weight: 700;
-      display: inline;
-      border-bottom: 4px solid $pink;
-    }
+  .Contact-description {
+    padding: 1rem 0;
+  }
 
-    .Contact-description {
-      padding: 1rem 0;
-    }
-
-    .Contact-email {
-      color: $pink;
-      text-decoration: underline solid $pink;
-    }
+  .link-style {
+    color: $pink;
+    text-decoration: underline solid $pink;
   }
 
   &-form {
@@ -75,11 +66,15 @@ $blue: #ccd6f6;
       margin: 2rem auto;
       align-items: center;
       transition: all 0.3s;
-      cursor: pointer;
 
       &:hover {
         background-color: $pink;
-        border-color: $pink;
+        cursor: pointer;
+      }
+
+      &:disabled:hover {
+        background-color: inherit;
+        cursor: not-allowed;
       }
     }
   }
